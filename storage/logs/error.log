@@ -172,3 +172,14 @@
 2021-10-17 15:21:32 - PHP Notice:  Undefined variable: expenditure in C:\xampp\htdocs\himommy\quanly\controller\common\column_left.php on line 679
 2021-12-16 14:38:25 - PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\atmart\system\library\mail\mail.php on line 77
 2021-12-16 14:38:27 - PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\atmart\system\library\mail\mail.php on line 77
+2021-12-16 15:52:51 - PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\atmart\system\library\mail\mail.php on line 77
+2021-12-16 15:53:33 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\atmart\catalog\controller\startup\startup.php on line 166
+2021-12-16 15:53:33 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\atmart\catalog\controller\startup\startup.php on line 166
+2021-12-16 15:53:46 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\atmart\catalog\controller\startup\startup.php on line 166
+2021-12-16 15:53:46 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\atmart\catalog\controller\startup\startup.php on line 166
+2021-12-16 15:53:56 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\atmart\catalog\controller\startup\startup.php on line 166
+2021-12-16 15:53:56 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\atmart\catalog\controller\startup\startup.php on line 166
+2021-12-16 15:54:02 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\atmart\catalog\controller\startup\startup.php on line 166
+2021-12-16 15:54:02 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\atmart\catalog\controller\startup\startup.php on line 166
+2021-12-16 15:55:58 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\atmart\catalog\controller\startup\startup.php on line 166
+2021-12-16 15:55:58 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\atmart\catalog\controller\startup\startup.php on line 166
