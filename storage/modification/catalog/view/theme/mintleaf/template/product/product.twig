@@ -216,27 +216,31 @@
         {% if price %}
         <!-- Price Starts -->
           <div class="product-info-price clearfix">
-          {% if not special %}
-            <span class="price-new">{{ price }}</span>
+          {% if logged %}
+            {% if not special %}
+              <span class="price-new">{{ price }}</span>
+            {% else %}
+              <span class="price-new">{{ special }}</span> <span class="price-old">{{ price }}</span>
+            {% endif %}
+            {% if tax %}
+              <p class="product-info-price-tax">{{ text_tax }} {{ tax }}</p>
+            {% endif %}
+            {% if points %}
+              <p class="product-info-price-rewards">{{ text_points }} {{ points }}</p>
+            {% endif %}
+            {% if discounts %}
+            <div class="table-responsive"> 
+              <table class="table table-dark table-bordered table-striped">
+                <tbody>
+                {% for discount in discounts %}
+                  <tr><td><b>{{ text_discount }}<span style="color:red">{{ discount.quantity }}</span></b>:&nbsp;{{ discount.price }}</td></tr>
+                {% endfor %}
+                </tbody>
+              </table>
+            </div>
+            {% endif %}
           {% else %}
-            <span class="price-new">{{ special }}</span> <span class="price-old">{{ price }}</span>
-          {% endif %}
-          {% if tax %}
-            <p class="product-info-price-tax">{{ text_tax }} {{ tax }}</p>
-          {% endif %}
-          {% if points %}
-            <p class="product-info-price-rewards">{{ text_points }} {{ points }}</p>
-          {% endif %}
-          {% if discounts %}
-          <div class="table-responsive"> 
-            <table class="table table-dark table-bordered table-striped">
-              <tbody>
-              {% for discount in discounts %}
-                <tr><td>{{ discount.quantity }}{{ text_discount }}{{ discount.price }}</td></tr>
-              {% endfor %}
-              </tbody>
-            </table>
-          </div>
+            <span class="price-new">{{ 'Đăng nhập để xem giá' }}</span>
           {% endif %}
           </div>
         <!-- Price Ends -->
@@ -277,7 +281,7 @@
                 </div>
               </div>            
               <div class="button-group product-info-cart-btns-wrap pull-left-lg pull-left-md pull-left-sm">
-                <button type="button" id="button-cart" data-loading-text="{{ text_loading }}" class="btn btn-cart animation"><i class="fa fa-shopping-cart"></i> {{ button_cart }}</button>
+                {% if logged %}<button type="button" id="button-cart" data-loading-text="{{ text_loading }}" class="btn btn-cart animation"><i class="fa fa-shopping-cart"></i> {{ button_cart }}</button>{% endif %}
                 <button type="button" data-toggle="tooltip" class="btn btn-wishlist animation" title="{{ button_wishlist }}" onclick="wishlist.add('{{ product_id }}');"><i class="fa fa-heart"></i></button>
                 <button type="button" data-toggle="tooltip" class="btn btn-compare animation" title="{{ button_compare }}" onclick="compare.add('{{ product_id }}');"><i class="fa fa-exchange"></i></button>
               </div>
@@ -445,16 +449,22 @@
               {% if product.price %}
               <!-- Product Price Starts -->
                 <div class="module-product-price">
-                  {% if not product.special %}
-                    {{ product.price }}
+                  {% if logged %}
+                    {% if not product.special %}
+                      {{ product.price }}
+                    {% else %}
+                      <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+                    {% endif %}
                   {% else %}
-                    <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+                    <span style="font-size: 14px">{{ 'Đăng nhập để xem giá' }}</span>
                   {% endif %}
                 </div>
               <!-- Product Price Ends -->
               {% endif %}
               <!-- Add To Cart Button Starts -->
+              {% if logged %}
                 <button type="button" class="btn module-product-btn-cart animation rounded-3" onclick="cart.add('{{ product.product_id }}');"><i class="fa fa-shopping-cart"></i> {{ button_cart }}</button>
+              {% endif %}
               <!-- Add To Cart Button Ends -->
               </div>
             <!-- Product Caption Ends -->

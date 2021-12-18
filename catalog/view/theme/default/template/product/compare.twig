@@ -41,12 +41,12 @@
           <tr>
             <td>{{ text_price }}</td>
             {% for product in products %}
-            <td>{% if product.price %}
+            <td>{% if logged %}{% if product.price %}
               {% if not product.special %}
               {{ product.price }}
               {% else %} <strike>{{ product.price }}</strike> {{ product.special }}
               {% endif %}
-              {% endif %}</td>
+              {% endif %}{% else %}Đăng nhập để xem giá{% endif %}</td>
             {% endfor %} </tr>
           <tr>
             <td>{{ text_model }}</td>
