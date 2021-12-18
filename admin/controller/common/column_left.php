@@ -420,7 +420,7 @@ class ControllerCommonColumnLeft extends Controller {
 			
 			if ($user) {
 				$system[] = array(
-					'name'	   => $this->language->get('text_users'),
+					'name'	   => $this->language->get('text_user'),
 					'href'     => '',
 					'children' => $user		
 				);
@@ -571,13 +571,13 @@ class ControllerCommonColumnLeft extends Controller {
 				);
 			}
 			
-			if ($localisation) {																
-				$system[] = array(
-					'name'	   => $this->language->get('text_localisation'),
-					'href'     => '',
-					'children' => $localisation	
-				);
-			}
+			// if ($localisation) {																
+			// 	$system[] = array(
+			// 		'name'	   => $this->language->get('text_localisation'),
+			// 		'href'     => '',
+			// 		'children' => $localisation	
+			// 	);
+			// }
 			
 			// Tools	
 			$maintenance = array();
@@ -653,13 +653,13 @@ class ControllerCommonColumnLeft extends Controller {
 				);
 			}	
 			
-			$data['menus'][] = array(
-				'id'       => 'menu-report',
-				'icon'	   => 'fa-bar-chart-o', 
-				'name'	   => $this->language->get('text_reports'),
-				'href'     => '',
-				'children' => $report
-			);
+			// $data['menus'][] = array(
+			// 	'id'       => 'menu-report',
+			// 	'icon'	   => 'fa-bar-chart-o', 
+			// 	'name'	   => $this->language->get('text_reports'),
+			// 	'href'     => '',
+			// 	'children' => $report
+			// );
 
 
 			// Add new - expenditure management

@@ -233,7 +233,7 @@
               <table class="table table-dark table-bordered table-striped">
                 <tbody>
                 {% for discount in discounts %}
-                  <tr><td>{{ discount.quantity }}{{ text_discount }}{{ discount.price }}</td></tr>
+                  <tr><td><b>{{ text_discount }}<span style="color:red">{{ discount.quantity }}</span></b>:&nbsp;{{ discount.price }}</td></tr>
                 {% endfor %}
                 </tbody>
               </table>

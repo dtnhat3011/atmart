@@ -154,7 +154,7 @@
               <hr>
             </li>
             {% for discount in discounts %}
-            <li>{{ discount.quantity }}{{ text_discount }}{{ discount.price }}</li>
+            <li><b>{{ text_discount }}<span style="color:red">{{ discount.quantity }}</span>:</b>&nbsp;{{ discount.price }}</li>
             {% endfor %}
             {% endif %}
           </ul>

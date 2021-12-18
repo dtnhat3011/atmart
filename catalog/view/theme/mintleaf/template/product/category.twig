@@ -137,7 +137,9 @@
               <!-- Product Price Ends -->
               {% endif %}
               <!-- Add To Cart Button Starts -->
+              {% if logged %}
                 <button type="button" class="btn module-product-btn-cart animation" onclick="cart.add('{{ product.product_id }}');"><i class="fa fa-shopping-cart"></i> {{ button_cart }}</button>
+              {% endif %}
               <!-- Add To Cart Button Ends -->
             </div>
           <!-- Product Caption Ends -->

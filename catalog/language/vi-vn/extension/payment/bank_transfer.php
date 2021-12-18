@@ -1,6 +1,6 @@
 <?php
 // Text
-$_['text_title']       = 'Bank Transfer';
-$_['text_instruction'] = 'Bank Transfer Instructions';
-$_['text_description'] = 'Please transfer the total amount to the following bank account.';
-$_['text_payment']     = 'Your order will not ship until we receive payment.';
+$_['text_title']       = 'Chuyển khoản ngân hàng';
+$_['text_instruction'] = 'Hướng dẫn chuyển khoản ngân hàng';
+$_['text_description'] = 'Vui lòng chuyển khoản với thông tin sau:';
+$_['text_payment']     = 'Đơn hàng của bạn sẽ được xử lý ngay khi chúng tôi kiểm tra đã nhận được khoản chuyển.';
