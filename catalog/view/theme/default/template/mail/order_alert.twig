@@ -1,13 +1,13 @@
 {{ text_received }}
-
-{{ text_order_id }} {{ order_id }}
-{{ text_date_added }} {{ date_added }}
+{{ "\r\n" }}
+{{ text_order_id }} {{ order_id }} {{ "\r\n" }}
+{{ text_date_added }} {{ date_added }} {{ "\r\n" }}
 {{ text_order_status }} {{ order_status }}
-
+{{ "\r\n\r\n" }}
 {{ text_product }}
-
+{{ "\r\n" }}
 {% for product in products %}
-{{ product.quantity }}x {{ product.name }} ({{ product.model }}) {{ product.total }}
+{{ product.quantity }}x {{ product.name }} ({{ product.model }}) {{ product.total }}{{ "\r\n" }}
 {% if option %}
 {% for option in product.option %}
 	- {{ option.name }} {{ option.value }}
@@ -20,12 +20,13 @@
 1x {{ voucher.description }} {{ voucher.amount }}
 {% endfor %} 
 {% endif %}
+{{ "\r\n" }}
 {{ text_total }}
-
+{{ "\r\n" }}
 {% for total in totals %}
-{{ total.title }}: {{ total.value }}
+{{ total.title }}: {{ total.value }}{{ "\r\n" }}
 {% endfor %} 
-  
+{{ "\r\n" }}
 {% if comment %}
 {{ text_comment }}
 

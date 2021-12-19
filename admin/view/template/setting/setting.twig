@@ -33,10 +33,10 @@
             <li class="active"><a href="#tab-general" data-toggle="tab">{{ tab_general }}</a></li>
             <li><a href="#tab-store" data-toggle="tab">{{ tab_store }}</a></li>
             <li><a href="#tab-local" data-toggle="tab">{{ tab_local }}</a></li>
-            <li><a href="#tab-option" data-toggle="tab">{{ tab_option }}</a></li>
+            <li style="display:none"><a href="#tab-option" data-toggle="tab">{{ tab_option }}</a></li>
             <li><a href="#tab-image" data-toggle="tab">{{ tab_image }}</a></li>
             <li><a href="#tab-mail" data-toggle="tab">{{ tab_mail }}</a></li>
-            <!--<li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>-->
+            <li style="display:none"><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
           </ul>
           <div class="tab-content">
             <div class="tab-pane active" id="tab-general">
@@ -60,7 +60,7 @@
                   <textarea name="config_meta_keyword" rows="5" placeholder="{{ entry_meta_keyword }}" id="input-meta-keyword" class="form-control">{{ config_meta_keyword }}</textarea>
                 </div>
               </div>
-              <!--<div class="form-group">
+              <div class="form-group" style="display:none">
                 <label class="col-sm-2 control-label" for="input-theme">{{ entry_theme }}</label>
                 <div class="col-sm-10">
                   <select name="config_theme" id="input-theme" class="form-control">
@@ -81,7 +81,7 @@
                   <br />
                   <img src="" alt="" id="theme" class="img-thumbnail" /></div>
               </div>
-              <div class="form-group">
+              <div class="form-group" style="display:none">
                 <label class="col-sm-2 control-label" for="input-layout">{{ entry_layout }}</label>
                 <div class="col-sm-10">
                   <select name="config_layout_id" id="input-layout" class="form-control">
@@ -100,7 +100,7 @@
                   
                   </select>
                 </div>
-              </div>-->
+              </div>
             </div>
             <div class="tab-pane" id="tab-store">
               <div class="form-group required">
@@ -127,7 +127,7 @@
                   <div class="text-danger">{{ error_address }}</div>
                   {% endif %} </div>
               </div>
-              <div class="form-group">
+              <div class="form-group" style="display:none">
                 <label class="col-sm-2 control-label" for="input-geocode"><span data-toggle="tooltip" data-container="#tab-general" title="{{ help_geocode }}">{{ entry_geocode }}</span></label>
                 <div class="col-sm-10">
                   <input type="text" name="config_geocode" value="{{ config_geocode }}" placeholder="{{ entry_geocode }}" id="input-geocode" class="form-control" />
@@ -149,7 +149,7 @@
                   <div class="text-danger">{{ error_telephone }}</div>
                   {% endif %} </div>
               </div>
-              <div class="form-group">
+              <div class="form-group" style="display:none">
                 <label class="col-sm-2 control-label" for="input-fax">{{ entry_fax }}</label>
                 <div class="col-sm-10">
                   <input type="text" name="config_fax" value="{{ config_fax }}" placeholder="{{ entry_fax }}" id="input-fax" class="form-control" />
@@ -190,7 +190,7 @@
               </div>
               {% endif %} </div>
             <div class="tab-pane" id="tab-local">
-              <!--<div class="form-group">
+              <div class="form-group" style="display:none">
                 <label class="col-sm-2 control-label" for="input-country">{{ entry_country }}</label>
                 <div class="col-sm-10">
                   <select name="config_country_id" id="input-country" class="form-control">
@@ -209,7 +209,7 @@
                   
                   </select>
                 </div>
-              </div>-->
+              </div>
               <div class="form-group">
                 <label class="col-sm-2 control-label" for="input-zone">{{ entry_zone }}</label>
                 <div class="col-sm-10">
@@ -217,7 +217,7 @@
                   </select>
                 </div>
               </div>
-              <!--<div class="form-group">
+              <div class="form-group" style="display:none">
                 <label class="col-sm-2 control-label" for="input-language">{{ entry_language }}</label>
                 <div class="col-sm-10">
                   <select name="config_language" id="input-language" class="form-control">
@@ -237,7 +237,7 @@
                   </select>
                 </div>
               </div>
-              <div class="form-group">
+              <div class="form-group" style="display:none">
                 <label class="col-sm-2 control-label" for="input-admin-language">{{ entry_admin_language }}</label>
                 <div class="col-sm-10">
                   <select name="config_admin_language" id="input-admin-language" class="form-control">
@@ -257,7 +257,7 @@
                   </select>
                 </div>
               </div>
-              <div class="form-group">
+              <div class="form-group" style="display:none">
                 <label class="col-sm-2 control-label" for="input-currency"><span data-toggle="tooltip" title="{{ help_currency }}">{{ entry_currency }}</span></label>
                 <div class="col-sm-10">
                   <select name="config_currency" id="input-currency" class="form-control">
@@ -277,7 +277,7 @@
                   </select>
                 </div>
               </div>
-              <div class="form-group">
+              <div class="form-group" style="display:none">
                 <label class="col-sm-2 control-label"><span data-toggle="tooltip" title="{{ help_currency_auto }}">{{ entry_currency_auto }}</span></label>
                 <div class="col-sm-10">
                   <label class="radio-inline"> {% if config_currency_auto %}
@@ -295,7 +295,7 @@
                     {{ text_no }}
                     {% endif %} </label>
                 </div>
-              </div>-->
+              </div>
               <div class="form-group">
                 <label class="col-sm-2 control-label" for="input-length-class">{{ entry_length_class }}</label>
                 <div class="col-sm-10">
@@ -409,7 +409,7 @@
                   </div>
                 </div>
               </fieldset>
-              <!--<fieldset>
+              <fieldset>
                 <legend>{{ text_voucher }}</legend>
                 <div class="form-group required">
                   <label class="col-sm-2 control-label" for="input-voucher-min"><span data-toggle="tooltip" title="{{ help_voucher_min }}">{{ entry_voucher_min }}</span></label>
@@ -505,7 +505,7 @@
                     </select>
                   </div>
                 </div>
-              </fieldset>-->
+              </fieldset>
               <fieldset>
                 <legend>{{ text_account }}</legend>
                 <div class="form-group">
@@ -876,7 +876,7 @@
                   </div>
                 </div>
               </fieldset>
-              <!--<fieldset>
+              <fieldset>
                 <legend>{{ text_affiliate }}</legend>
                 <div class="form-group">
                   <label class="col-sm-2 control-label" for="input-affiliate-group">{{ entry_affiliate_group }}</label>
@@ -1047,7 +1047,7 @@
                       {% endfor %} </div>
                   </div>
                 </div>
-              </fieldset>-->
+              </fieldset>
             </div>
             <div class="tab-pane" id="tab-image">
               <div class="form-group">
