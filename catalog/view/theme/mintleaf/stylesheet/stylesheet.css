@@ -52,7 +52,7 @@ a:focus {
 	font-size: 14px;
 }
 .main-logo {
-	height: 58px;
+	height: 75px;
 	margin-top: -4px;
 }
 #search {
@@ -358,6 +358,7 @@ hr {
 	padding-top: 15px;
 	padding-bottom: 15px;
 	border-bottom: 1px dashed #c1c1c1;
+	background: #D5D1C6;
 }
 	.top-links > li:not(:last-child) {
 		margin-right: 6px;
