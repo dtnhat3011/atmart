@@ -3,7 +3,7 @@
 $_['heading_title']     = 'Tìm thương hiệu ưu thích';
 
 // Text
-$_['text_brand']        = 'Thương hiện';
+$_['text_brand']        = 'Thương hiệu';
 $_['text_index']        = 'Danh sách thương hiệu:';
 $_['text_error']        = 'Không tồn tại!';
 $_['text_empty']        = 'Không có thương hiệu nào trong danh sách.';
@@ -15,7 +15,7 @@ $_['text_price']        = 'Giá:';
 $_['text_tax']          = 'Trước Thuế:'; 
 $_['text_compare']      = 'So sánh sản phẩm (%s)';
 $_['text_sort']         = 'Sắp xếp theo:';
-$_['text_default']      = 'Mặc địng';
+$_['text_default']      = 'Mặc định';
 $_['text_name_asc']     = 'Tên (A - Z)';
 $_['text_name_desc']    = 'Tên (Z - A)';
 $_['text_price_asc']    = 'Giá (Thấp &gt; Cao)';
