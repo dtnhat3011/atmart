@@ -32,12 +32,20 @@
         <ul class="list-unstyled list-inline list-cat-1 animation">
         {% if categories|length <= 5 %}          
           {% for category in categories %}
-            <li><a href="{{ category.href }}">{{ category.name }}</a></li>
+            {% if category.thumb %}
+                <li><a href="{{ category.href }}"><img src="{{ category.thumb }}" alt="{{ heading_title }}" title="{{ heading_title }}" class="img-responsive" /><center>{{ category.name }}</center></a></li>
+              {% else %}
+                <li><a href="{{ category.href }}">{{ category.name }}</a></li>
+              {% endif %}
           {% endfor %}
         {% else %}
           {% for category in categories|batch((categories|length / 4)|round(1, 'ceil')) %}
             {% for child in category %}
-              <li><a href="{{ child.href }}">{{ child.name }}</a></li>
+              {% if child.thumb %}
+                <li><a href="{{ child.href }}"><img src="{{ child.thumb }}" alt="{{ heading_title }}" title="{{ heading_title }}" class="img-responsive" /><center>{{ child.name }}</center></a></li>
+              {% else %}
+                <li><a href="{{ child.href }}">{{ child.name }}</a></li>
+              {% endif %}
             {% endfor %}            
           {% endfor %}
         {% endif %}
