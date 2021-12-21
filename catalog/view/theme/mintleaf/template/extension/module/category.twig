@@ -8,9 +8,9 @@
         {% if category.children %}
           {% for child in category.children %}
             {% if child.category_id == child_id %}
-              <a href="{{ child.href }}" class="list-group-item child active">&nbsp;&nbsp;&nbsp;- {{ child.name }}</a> 
+              <a href="{{ child.href }}" class="list-group-item child active">&nbsp;&nbsp;&nbsp;{{ child.name }}</a> 
             {% else %} 
-            <a href="{{ child.href }}" class="list-group-item child">&nbsp;&nbsp;&nbsp;- {{ child.name }}</a>
+            <a href="{{ child.href }}" class="list-group-item child">&nbsp;&nbsp;&nbsp;{{ child.name }}</a>
             {% endif %}
           {% endfor %}
         {% endif %}

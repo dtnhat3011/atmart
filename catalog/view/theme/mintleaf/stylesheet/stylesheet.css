@@ -948,6 +948,7 @@ hr {
 		border: none;
 		outline: none;
 		padding: 8px 10px;
+		width: 100%;
 	}
 	a.list-group-item:hover, 
 	a.list-group-item:focus, 
@@ -957,7 +958,10 @@ hr {
 		/*color: #4D6EB9;*/
 		color: #fff;
 		background-color: #4D6EB9;
-		border-radius: 4px;
+		border-top-left-radius: 4px;
+		border-top-right-radius: 0px;
+		border-bottom-left-radius: 4px;
+		border-bottom-right-radius: 0px;
 		margin-left: 10px;
 	}
 	a.list-group-item.child {
@@ -1392,7 +1396,19 @@ hr {
 			margin-bottom: 0;
 			margin-left: -25px;
 			width: 250px;
+			
 		}
+			.list-group .submenu {
+				position: absolute;
+				margin-left: 261px;
+				z-index: 1000;
+				width: 300px;
+				background: #fff;
+				border: 1px solid #f1f1f1;
+				padding: 15px 10px 15px 2px;
+				margin-top: -40px;
+				display: none;
+			}
 		.sblock-1-content input[type="checkbox"], 
 		.sblock-1-content input[type="radio"] {
 			margin-top: 6px;
