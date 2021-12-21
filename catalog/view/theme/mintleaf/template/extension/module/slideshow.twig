@@ -5,11 +5,11 @@
       <div class="list-group animation">
         {% for category in categories %}
           <div id="menu_{{ category.id }}" class="menu-group">
-            <a href="{{ category.href }}" class="list-group-item parent">{{ category.name }}</a>
+            <a href="{{ category.href }}" class="list-group-item mainmenu-item parent">{{ category.name }}</a>
             {% if category.children %}
               <div id="submenu_{{ category.id }}" class="submenu">
                 {% for child in category.children %}
-                  <a href="{{ child.href }}" class="list-group-item child">&nbsp;&nbsp;&nbsp;{{ child.name }}</a>
+                  <a href="{{ child.href }}" class="list-group-item submenu-item child">&nbsp;&nbsp;&nbsp;{{ child.name }}</a>
                 {% endfor %}
               </div>
             {% endif %}
