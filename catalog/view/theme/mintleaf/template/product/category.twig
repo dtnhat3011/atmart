@@ -1,4 +1,13 @@
 {{ header }}
+<style>
+.small {
+    height: 155px;
+    overflow: hidden;
+}
+.big {
+    height: auto;
+}
+</style>
 <div id="product-category" class="container">
   <ul class="breadcrumb">
     {% for breadcrumb in breadcrumbs %}
@@ -23,7 +32,8 @@
         <div class="col-xs-10">
           <h4 class="page-heading-1">{{ heading_title }}</h4>
           {% if description %}
-          <div>{{ description }}</div>
+          <div class="description-wrapper small">{{ description }}</div>
+          <button type="button" class="btn btn-default animation rounded-3 btn-showmoreless" style="margin-top:20px">Xem thêm</button>
           {% endif %}
         </div>
       </div>
@@ -172,4 +182,15 @@
       {{ content_bottom }}</div>
     {{ column_right }}</div>
 </div>
+<script>
+$('.btn-showmoreless').on('click', function (e) {
+    e.preventDefault();
+    $('.description-wrapper').toggleClass('small big');
+    if ($('.description-wrapper').hasClass('small')) {
+      $('.btn-showmoreless').text('Xem thêm');
+    } else {
+      $('.btn-showmoreless').text('Thu gọn');
+    }
+});
+</script>
 {{ footer }} 
