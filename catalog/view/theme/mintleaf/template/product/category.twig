@@ -1,4 +1,13 @@
 {{ header }}
+<style>
+.small {
+    height: 155px;
+    overflow: hidden;
+}
+.big {
+    height: auto;
+}
+</style>
 <div id="product-category" class="container">
   <ul class="breadcrumb">
     {% for breadcrumb in breadcrumbs %}
@@ -23,7 +32,8 @@
         <div class="col-xs-10">
           <h4 class="page-heading-1">{{ heading_title }}</h4>
           {% if description %}
-          <div>{{ description }}</div>
+          <div class="description-wrapper small">{{ description }}</div>
+          <button type="button" class="btn btn-default animation rounded-3 btn-showmoreless" style="margin-top:20px">Xem thêm</button>
           {% endif %}
         </div>
       </div>
@@ -32,12 +42,20 @@
         <ul class="list-unstyled list-inline list-cat-1 animation">
         {% if categories|length <= 5 %}          
           {% for category in categories %}
-            <li><a href="{{ category.href }}">{{ category.name }}</a></li>
+            {% if category.thumb %}
+                <li><a href="{{ category.href }}"><img src="{{ category.thumb }}" alt="{{ heading_title }}" title="{{ heading_title }}" class="img-responsive" /><center>{{ category.name }}</center></a></li>
+              {% else %}
+                <li><a href="{{ category.href }}">{{ category.name }}</a></li>
+              {% endif %}
           {% endfor %}
         {% else %}
           {% for category in categories|batch((categories|length / 4)|round(1, 'ceil')) %}
             {% for child in category %}
-              <li><a href="{{ child.href }}">{{ child.name }}</a></li>
+              {% if child.thumb %}
+                <li><a href="{{ child.href }}"><img src="{{ child.thumb }}" alt="{{ heading_title }}" title="{{ heading_title }}" class="img-responsive" /><center>{{ child.name }}</center></a></li>
+              {% else %}
+                <li><a href="{{ child.href }}">{{ child.name }}</a></li>
+              {% endif %}
             {% endfor %}            
           {% endfor %}
         {% endif %}
@@ -164,4 +182,15 @@
       {{ content_bottom }}</div>
     {{ column_right }}</div>
 </div>
+<script>
+$('.btn-showmoreless').on('click', function (e) {
+    e.preventDefault();
+    $('.description-wrapper').toggleClass('small big');
+    if ($('.description-wrapper').hasClass('small')) {
+      $('.btn-showmoreless').text('Xem thêm');
+    } else {
+      $('.btn-showmoreless').text('Thu gọn');
+    }
+});
+</script>
 {{ footer }} 

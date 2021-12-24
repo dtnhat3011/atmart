@@ -115,3 +115,74 @@ FILE: catalog/language/en-gb/common/cart.php
 CODE: %s item(s) - %s
 LINE: 2
 ----------------------------------------------------------------
+2021-12-22 10:50:39 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: $loader = new \Twig_Loader_Filesystem(DIR_TEMPLATE);
+LINE: 19
+----------------------------------------------------------------
+MOD: Admin Category Filter (Search)
+
+FILE: admin/view/template/catalog/category_list.twig
+CODE: {{ footer }}
+LINE: 132
+CODE: {% if error_warning %}
+LINE: 60
+
+FILE: admin/model/catalog/category.php
+CODE: if (!empty($data['filter_name'])) {
+LINE: 223
+CODE: getTotalCategories()
+LINE: 335
+CODE: $query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "category");
+LINE: 338
+CODE: public function getCategories($data = array()) {
+LINE: 228
+
+FILE: admin/controller/catalog/category.php
+CODE: $category_total = $this->model_catalog_category->getTotalCategories();
+LINE: 202
+CODE: $pagination = new Pagination();
+LINE: 268
+CODE: protected function getList() {
+LINE: 170
+CODE: 'limit' => $this->config->get('config_limit_admin')
+LINE: 229
+CODE: $data['categories'][] = array(
+LINE: 242
+CODE: $data['button_rebuild'] = $this->language->get('button_rebuild');
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Mint Leaf
+
+FILE: catalog/controller/common/menu.php
+CODE: return $this->load->view('common/menu', $data);
+LINE: 59
+
+FILE: catalog/language/en-gb/common/cart.php
+CODE: %s item(s) - %s
+LINE: 2
+----------------------------------------------------------------
