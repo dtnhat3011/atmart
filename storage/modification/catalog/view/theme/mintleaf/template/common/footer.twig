@@ -87,10 +87,12 @@
             <div class="foot-col-body">
             <!-- Footer Contact Links Starts -->
               <ul class="list-unstyled footer-contact-links mb-xs-0 mb-sm-0 font-weight-medium">
-                <li><i class="fa fa-shopping-cart"></i> AT' Mart</li>
-                <li><i class="fa fa-map-marker"></i> 12-14 QL 50, ấp Long thạnh, xã Long Bình Điền, Chợ Gạo, Tiền Giang</li>
+                <li><a href="https://www.facebook.com/ATMART.CG"><i class="fa fa-facebook"></i> AT' Mart</a></li>
+                <li><a href="https://goo.gl/maps/Xf1V7QEzko8tt3k16"><i class="fa fa-map-marker"></i> 12-14 QL 50, ấp Long thạnh, xã Long Bình Điền, Chợ Gạo, Tiền Giang</a></li>
                 <li><i class="fa fa-envelope-o"></i> E-mail : <a href="mailto:E-mail : atmart1214@gmail.com">atmart1214@gmail.com</a></li>
-                <li><i class="fa fa-phone"></i> Phone: <a href="tel:0977297096">0977297096</a></li>
+                <li><i class="fa fa-phone"></i> Điện thoại 1: <a href="tel:0977297096">0977.297.096</a></li>
+                <li><i class="fa fa-phone"></i> Điện thoại 2: <a href="tel:0977297096">091.99999.54</a></li>
+                <li><a href="https://zalo.me/0977297096"><img style="height: 15px" src="/image/catalog/zalo-icon.png"/>&nbsp;0977.297.096</a></li>
               </ul>
             <!-- Footer Contact Links Ends -->
             </div>
@@ -114,14 +116,6 @@
         <p class="copyright-text mb-lg-0 mb-md-0">{{ powered }}</p>
       </div>
     <!-- Copyright Text Ends -->
-    <!-- Payment Gateway Starts -->
-      <div class="pull-right-lg pull-right-md">
-        <ul class="list-unstyled list-inline mb-0 text-right-lg text-right-md animation">
-          <li><a href="https://www.facebook.com/ATMART.CG"><i class="fa fa-facebook"></i></a></li>
-          <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-        </ul>
-      </div>
-    <!-- Payment Gateway Ends -->
     </div>
   <!-- Nested Container Ends -->
   </div>
@@ -139,4 +133,35 @@ $(document).on('click','.note-link button',function(){
 });
 </script>
 			
-</body></html>
+</body>
+<!-- Messenger Plugin chat Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Plugin chat code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "112413823870683");
+      chatbox.setAttribute("attribution", "biz_inbox");
+    </script>
+
+    <!-- Your SDK code -->
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v12.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+</html>

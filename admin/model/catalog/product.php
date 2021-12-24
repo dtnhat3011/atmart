@@ -382,6 +382,10 @@ class ModelCatalogProduct extends Model {
 			$sql .= " AND p.status = '" . (int)$data['filter_status'] . "'";
 		}
 
+		if (isset($data['filter_manufacturer']) && $data['filter_manufacturer'] !== '') {
+			$sql .= " AND p.manufacturer_id IN (SELECT manufacturer_id FROM oc_manufacturer WHERE name LIKE '%{$data['filter_manufacturer']}%')";
+		}
+
 		$sql .= " GROUP BY p.product_id";
 
 		$sort_data = array(

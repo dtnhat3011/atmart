@@ -126,6 +126,10 @@
               
               </select>
             </div>
+            <div class="form-group">
+              <label class="control-label" for="input-manufacturer">Nhà sản xuất:</label>
+              <input type="text" name="filter_manufacturer" value="{{ filter_manufacturer }}" placeholder="Nhà sản xuất:" id="input-manufacturer" class="form-control" />
+            </div>
             <div class="form-group text-right">
               <button type="button" id="button-filter" class="btn btn-default"><i class="fa fa-filter"></i> {{ button_filter }}</button>
             </div>
@@ -227,6 +231,12 @@ $('#button-filter').on('click', function() {
 
 	if (filter_status !== '') {
 		url += '&filter_status=' + encodeURIComponent(filter_status);
+	}
+
+	var filter_manufacturer = $('input[name=\'filter_manufacturer\']').val();
+
+	if (filter_manufacturer !== '') {
+		url += '&filter_manufacturer=' + encodeURIComponent(filter_manufacturer);
 	}
 
 	location = 'index.php?route=catalog/product&user_token={{ user_token }}' + url;

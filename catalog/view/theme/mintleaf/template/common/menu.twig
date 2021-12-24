@@ -1,4 +1,16 @@
-{% if 1==0 %}
+<style>
+@media (min-width: 768px) {
+  .navbar {
+    display: none !important;
+  }
+}
+@media (max-width: 767px) {
+  .custom-menu {
+    display: none !important;
+  }
+}
+</style>
+{% if categories %}
 <nav id="menu" class="navbar">
   <div class="navbar-header">
     <!--<a class="navbar-brand" href="{{ home }}">
