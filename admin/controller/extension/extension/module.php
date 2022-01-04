@@ -156,15 +156,17 @@ class ControllerExtensionExtensionModule extends Controller {
 					);
 				}
 
-				$data['extensions'][] = array(
-					'name'      => $this->language->get('extension')->get('heading_title'),
-					'status'    => $this->config->get('module_' . $extension . '_status') ? $this->language->get('text_enabled') : $this->language->get('text_disabled'),
-					'module'    => $module_data,
-					'install'   => $this->url->link('extension/extension/module/install', 'user_token=' . $this->session->data['user_token'] . '&extension=' . $extension, true),
-					'uninstall' => $this->url->link('extension/extension/module/uninstall', 'user_token=' . $this->session->data['user_token'] . '&extension=' . $extension, true),
-					'installed' => in_array($extension, $extensions),
-					'edit'      => $this->url->link('extension/module/' . $extension, 'user_token=' . $this->session->data['user_token'], true)
-				);
+				if ($this->user->hasPermission('modify', 'extension/module/' . $extension)) {
+					$data['extensions'][] = array(
+						'name'      => $this->language->get('extension')->get('heading_title'),
+						'status'    => $this->config->get('module_' . $extension . '_status') ? $this->language->get('text_enabled') : $this->language->get('text_disabled'),
+						'module'    => $module_data,
+						'install'   => $this->url->link('extension/extension/module/install', 'user_token=' . $this->session->data['user_token'] . '&extension=' . $extension, true),
+						'uninstall' => $this->url->link('extension/extension/module/uninstall', 'user_token=' . $this->session->data['user_token'] . '&extension=' . $extension, true),
+						'installed' => in_array($extension, $extensions),
+						'edit'      => $this->url->link('extension/module/' . $extension, 'user_token=' . $this->session->data['user_token'], true)
+					);
+				}
 			}
 		}
 
